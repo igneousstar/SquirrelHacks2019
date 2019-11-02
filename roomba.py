@@ -1,70 +1,90 @@
 import serial
+import time
 
 def init_serial():
     CONUM = 1
     global ser
     ser = serial.Serial()
     ser.baudrate = 115200
-    ser.port = CONUM - 1
+    ser.port = "COM5"
     ser.timeout = 10
     ser.open()
     if ser.isOpen():
-        print 'Open: ' + ser.portstr
+        print ('Open: ' + ser.portstr)
 
-def set_mode():
-    while (input_correct = 0):
-        mode = rawinput("Choose mode(passive,safe,full)")
-        if (mode = "passive"):
-            sent = byte(7)
-            ser.write(sent)
-            input_correct = 1
-        else if (mode = "safe"):
-            sent = byte(131)
-            ser.write(sent)
-            input_correct = 1
-        else if (mode = "full"):
-            sent = byte(132)
-            ser.write(sent)
-            input_correct = 1
-        else:
-            print "error, incorrect input"
+def set_mode(mode):
+    if (mode == 0):
+        sent = bytes([7])
+        ser.write(sent)
+        print(sent)
+    elif (mode == 1):
+        sent = bytes([131])
+        ser.write(sent)
+        print(sent)
+    elif (mode == 3): #full mode
+        sent = bytes([132])
+        ser.write(sent)
+        print(sent)
 
-def start():
-    sent = byte(128)
+def start_data():
+    sent = bytes([128])
     ser.write(sent)
+    print(sent)
 
-def stop():
-    sent = byte(173)
+def stop_data():
+    sent = bytes([173])
     ser.write(sent)
+    print(sent)
 
 def clean():
-    sent = byte(135)
+    sent = bytes([135])
     ser.write(sent)
+    print(sent)
 
 def go_home(): #seek dock
-    sent = byte(143)
+    sent = bytes([143])
     ser.write(sent)
+    print(sent)
 
 def forward():
-    sent = bytes([135, 0,127,0,127])
+    sent = bytes([145, 0,127,0,127])
     ser.write(sent)
+    print(sent)
     
 def backward():
-    sent = bytes([135, 255,127,255,127])
+    sent = bytes([145, 255,127,255,127])
     ser.write(sent)
+    print(sent)
     
 def turn_left():
-    sent = bytes([135, 0,127,255,127])
+    sent = bytes([145, 0,127,255,127])
     ser.write(sent)
+    print(sent)
     
 def turn_right():
-    sent = bytes([135, 255,127,0,127])
+    sent = bytes([145, 255,127,0,127])
     ser.write(sent)
+    print(sent)
 
 def stop():
-    sent = bytes([135, 0,0,0,0])
+    sent = bytes([145, 0,0,0,0])
     ser.write(sent)
+    print(sent)
 
 def vaccum_disable():
     sent = bytes([138, 0])
     ser.write(sent)
+    print(sent)
+
+def 
+
+init_serial()
+start_data()
+time.sleep(1)
+set_mode(3)
+time.sleep(1)
+clean()
+time.sleep(10)
+set_mode(0)
+stop_data()
+
