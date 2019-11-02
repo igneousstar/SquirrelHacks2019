@@ -1,0 +1,31 @@
+115200 baud rate
+usb connection to pi
+
+3 modes
+	passive to charge battery and clean
+	saftey mode control of systems but will not violate saftey measures (cliff, etc.)
+	full mode is total control
+
+commands
+	start 		128
+	stop  		173
+	safe mode 	131
+	full mode 	132
+	seek dock	143
+	clean		135
+	drive		146 [1st right weel byte] [2nd right weel byte] [1st left weel byte] [2nd left weel byte]
+	vaccum off	138 0
+
+sensors
+	142 [packet ID to identify sensor]
+
+bump 7 			returns	XXXX[left wheel drop][right wheel drop][bump left][bump right]
+cliff left 9		returns 1 if true
+cliff front left 10	returns 1 if true
+cliff front right 11	returns 1 if true
+cliff right 12		returns 1 if true
+voltage 22		returns [2 bytes voltage unsigned]
+battery charge 25	returns [2 bytes voltage unsigned (mAh)]
+
+We will run in clean mode to take advantage of the auto navigation but disable the vaccum.
+
