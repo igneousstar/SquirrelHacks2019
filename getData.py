@@ -5,7 +5,4 @@ ser = serial .Serial('/dev/ttyACM0', 9600)
 ser.write(b'0')
 data= ser.readline()
 
-if (word.find('Human') != -1):
-    camera.capture('person.jpg')
-
 print(data)
