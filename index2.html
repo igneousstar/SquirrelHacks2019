@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- AAA Theme Made with help from www.w3schools.com - No Copyright -->
+  <title>Replacement Search and Rescue Dog</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap core-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+
+   <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/cupcakes/48/rainbow_cupcake.png">
+  
+
+<!-- Our CSS  --> 
+link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">Seach and Rescue Dog</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#myCarousel">Home</a></li>
+        <li><a href="#Projects">Manual Control</a></li>
+      
+        
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Container (TOUR Section) -->
+<div id="skills" class="bg-1">
+  <div class="container">
+    <h3 class="text-center"><center> SEARCH </h3>
+<center>
+    <button class=btn  onclick='right()'> Move Camera Right </button>
+    <form action="http://10.27.164.79:5005" method="post">
+	<input type="submit" name="right" value="Right"/>
+    </form>
+    <button class =btn onclick='left()'> Move Camera Left </button>
+    <form action="http:/10.27.164.79:5005/pi/home/socketThing.python" method="post">
+	<input type="submit" name="left" value="Left"/>
+    </form>
+    </center>
+ 
+    
+    
+    </div>
+  </div>
+  
+ 
+
+
+</script>
+
+</body>
+</html>
+

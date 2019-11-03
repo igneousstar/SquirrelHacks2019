@@ -6,7 +6,7 @@ def init_serial():
     global ser
     ser = serial.Serial()
     ser.baudrate = 115200
-    ser.port = "COM5"
+    ser.port = "/dev/ttyUSB0"
     ser.timeout = 10
     ser.open()
     if ser.isOpen():
@@ -75,16 +75,4 @@ def vaccum_disable():
     sent = bytes([138, 0])
     ser.write(sent)
     print(sent)
-
-def 
-
-init_serial()
-start_data()
-time.sleep(1)
-set_mode(3)
-time.sleep(1)
-clean()
-time.sleep(10)
-set_mode(0)
-stop_data()
 

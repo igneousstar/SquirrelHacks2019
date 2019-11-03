@@ -2,8 +2,6 @@ import roomba
 import time
 
 roomba.init_serial()
-roomba.forward()
-time.sleep(3)
-roomba.stop()
-
+roomba.start_data()
+roomba.set_mode(3)
 
